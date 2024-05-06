@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "hfexamples"
+version = "0.1.0"
+description = ""
+authors = ["jperedo <peredo01@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+transformers = "^4.40.2"
+datasets = "^2.19.1"
+torch = "^2.3.0"
+setuptools = "^69.5.1"
+wheel = "^0.43.0"
+sounddevice = "^0.4.6"
+gradio = "^4.29.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
