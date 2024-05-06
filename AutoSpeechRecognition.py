@@ -68,3 +68,5 @@ def run_app():
     play_sound = False
     speech_recognition(play_sound)
     longer_stereo_file_transcribe(play_sound)
+
+run_app()
