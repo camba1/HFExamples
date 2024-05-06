@@ -13,13 +13,14 @@ def transcribe(filepath):
     if filepath is None:
         gr.Warning("No audio file found, please retry!")
         return
-    output = asr(filepath)
+    output = asr(filepath,max_new_tokens=256, chunk_length_s=30, batch_size=8,)
     return output["text"]
 
 
 mic_transcribe = gr.Interface(fn=transcribe, inputs=gr.Audio(sources="microphone", type="filepath"),
                               outputs=gr.Textbox(label="Transcript", lines=3), title="Gradio Speech Recognition",
                               allow_flagging="never")
+
 file_transcribe = gr.Interface(fn=transcribe, inputs=gr.Audio(sources="upload", type="filepath"),
                               outputs=gr.Textbox(label="Transcript", lines=3), title="Gradio Speech Recognition",
                               allow_flagging="never")
