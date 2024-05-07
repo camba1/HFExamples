@@ -11,6 +11,8 @@ def image_to_text(source_image: Image, text: str):
     print(outputs)
     one_output = torch.nn.functional.softmax(outputs,dim=1)
     print(one_output)
+    # in one_output the first value is the probability that the image does not match the text
+    # the second value is the probability that the image matches the text
     print(f"Probability of text matching the image: {one_output[0][1]:.4f}")
     print(f"Max Probability: {one_output.max():.4f}")
 
